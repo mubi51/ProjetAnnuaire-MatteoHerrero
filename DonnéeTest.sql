@@ -17,7 +17,9 @@ INSERT INTO `admin` (`IDAdmin`, `MdpAdmin`, `AdresseMailAdmin`, `IdentifiantAdmi
 
 INSERT INTO `motcle` (`IdMotCles`, `MotCles`) VALUES (NULL, 'Peugeot');
 
-#MotCles
+#MotClesSite
+
+INSERT INTO `motsclessite` (`IdMotCles`, `IdSite`) VALUES ('1', '1');
 
 
 #Site
