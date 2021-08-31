@@ -68,23 +68,25 @@ SELECT * FROM `client`,`site` WHERE client.IDClient=site.IdSite
 #Admin :
 
 #Se connecter
-SELECT * FROM `admin` WHERE IdentifiantAdmin = 'mamama'
+SELECT * FROM `admin` WHERE IdentifiantAdmin = 'mamama';
+SELECT * FROM `admin` WHERE IdentifiantAdmin ='mamama' and MdpAdmin ='1234';
+
 
 #Approuver un site
 
-SELECT * FROM `admin`,`site` WHERE admin.IDAdmin=site.IDAdmin
+SELECT * FROM `admin`,`site` WHERE admin.IDAdmin=site.IDAdmin;
 
 
 #MotCles
 
 #Recherche
-SELECT * FROM `motcle` WHERE MotCles ='Peugeot'
+SELECT * FROM `motcle` WHERE MotCles ='Peugeot';
 
 
 #MotClesSite
 
 
-SELECT * FROM `motsclessite` WHERE IdSite ='2'
+SELECT * FROM `motsclessite` WHERE IdSite ='2';
 
 
 #Site
