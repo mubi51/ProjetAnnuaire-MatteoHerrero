@@ -15,7 +15,7 @@ CREATE TABLE Client(
         MdpClient              Varchar (50) NOT NULL ,
         AnneedenaissanceClient Date NOT NULL ,
         VilleClient            Varchar (50) NOT NULL ,
-        CodePostalClient       Int NOT NULL ,
+        CodePostalClient       Varchar (50) NOT NULL ,
         AdressClient           Varchar (50) NOT NULL ,
         IdentifiantClient      Varchar (50) NOT NULL
 	,CONSTRAINT Client_AK UNIQUE (IdentifiantClient)
@@ -90,6 +90,6 @@ CREATE TABLE MotsClesSite(
         IdSite    Int NOT NULL
 	,CONSTRAINT MotsClesSite_PK PRIMARY KEY (IdMotCles,IdSite)
 
-	,CONSTRAINT MotsClesSite_MotCle_FK FOREIGN KEY (IdMotCles) REFERENCES MotCle(IdMotCles)
-	,CONSTRAINT MotsClesSite_Site0_FK FOREIGN KEY (IdSite) REFERENCES Site(IdSite)
+	,CONSTRAINT MotsClesSite_MotCle_FK FOREIGN KEY (IdMotCles) REFERENCES MotCle(IdMotCles) ON DELETE CASCADE
+	,CONSTRAINT MotsClesSite_Site0_FK FOREIGN KEY (IdSite) REFERENCES Site(IdSite) ON DELETE CASCADE
 )ENGINE=InnoDB;
