@@ -9,12 +9,16 @@
 
 CREATE TABLE Client(
         IDClient               Int  Auto_increment  NOT NULL ,
+        NomClient              Varchar (50) NOT NULL ,
+        PrenomClient           Varchar (50) NOT NULL ,
+	IdentifiantClient      Varchar (50) NOT NULL ,
+        AdresseMailClient      Varchar (50) NOT NULL ,
         MdpClient              Varchar (50) NOT NULL ,
         AnneedenaissanceClient Date NOT NULL ,
         VilleClient            Varchar (50) NOT NULL ,
         CodePostalClient       Int NOT NULL ,
-        AdressClient           Varchar (50) NOT NULL ,
-        IdentifiantClient      Varchar (50) NOT NULL
+        AdressClient           Varchar (50) NOT NULL 
+      
 	,CONSTRAINT Client_AK UNIQUE (IdentifiantClient)
 	,CONSTRAINT Client_PK PRIMARY KEY (IDClient)
 )ENGINE=InnoDB;
@@ -27,6 +31,7 @@ CREATE TABLE Client(
 CREATE TABLE ADMIN(
         IDAdmin          Int  Auto_increment  NOT NULL ,
         MdpAdmin         Varchar (50) NOT NULL ,
+        AdresseMailAdmin Varchar (50) NOT NULL ,
         IdentifiantAdmin Varchar (50) NOT NULL
 	,CONSTRAINT ADMIN_AK UNIQUE (IdentifiantAdmin)
 	,CONSTRAINT ADMIN_PK PRIMARY KEY (IDAdmin)
@@ -51,6 +56,9 @@ CREATE TABLE Categorie(
 CREATE TABLE Site(
         IdSite            Int  Auto_increment  NOT NULL ,
         approuve          Bool NOT NULL ,
+        MotCles           Varchar (50) NOT NULL ,
+        Description       Varchar (50) NOT NULL ,
+        Image             Varchar (50) NOT NULL ,
         SiteClient        Varchar (50) NOT NULL ,
         IDAdmin           Int NOT NULL ,
         IdCategorieDuSite Int NOT NULL ,
@@ -62,4 +70,3 @@ CREATE TABLE Site(
 	,CONSTRAINT Site_Categorie0_FK FOREIGN KEY (IdCategorieDuSite) REFERENCES Categorie(IdCategorieDuSite)
 	,CONSTRAINT Site_Client1_FK FOREIGN KEY (IDClient) REFERENCES Client(IDClient)
 )ENGINE=InnoDB;
-
